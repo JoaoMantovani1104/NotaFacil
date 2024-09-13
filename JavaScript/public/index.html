@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nota Fácil - UEM</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        async function calcularNota(event) {
+            event.preventDefault();
+
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch('/calcularNota', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+                alert(`Nota final: ${result.notaFinal}/300`);
+            } catch (error) {
+                console.error('Erro ao calcular a nota:', error);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="titulo">
+        <h1>Nota Fácil - UEM</h1>
+        <h3>Seja bem-vindo(a) ao Nota Fácil, seu simulador de notas do vestibular da UEM!</h3>
+    </div>
+    <div class="form-container">
+        <form onsubmit="calcularNota(event)">
+            <div class="form-section">
+                <h3>Insira os valores das questões do gabarito:</h3>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" name="gabarito1" placeholder="Questão 1" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito2" placeholder="Questão 2" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito3" placeholder="Questão 3" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito4" placeholder="Questão 4" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito5" placeholder="Questão 5" autocomplete="off"/></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="gabarito6" placeholder="Questão 6" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito7" placeholder="Questão 7" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito8" placeholder="Questão 8" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito9" placeholder="Questão 9" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito10" placeholder="Questão 10" autocomplete="off"/></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="gabarito11" placeholder="Questão 11" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito12" placeholder="Questão 12" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito13" placeholder="Questão 13" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito14" placeholder="Questão 14" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito15" placeholder="Questão 15" autocomplete="off"/></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="gabarito16" placeholder="Questão 16" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito17" placeholder="Questão 17" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito18" placeholder="Questão 18" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito19" placeholder="Questão 19" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito20" placeholder="Questão 20" autocomplete="off"/></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="gabarito21" placeholder="Questão 21" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito22" placeholder="Questão 22" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito23" placeholder="Questão 23" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito24" placeholder="Questão 24" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito25" placeholder="Questão 25" autocomplete="off"/></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="gabarito26" placeholder="Questão 26" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito27" placeholder="Questão 27" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito28" placeholder="Questão 28" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito29" placeholder="Questão 29" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito30" placeholder="Questão 30" autocomplete="off"/></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="gabarito31" placeholder="Questão 31" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito32" placeholder="Questão 32" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito33" placeholder="Questão 33" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito34" placeholder="Questão 34" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito35" placeholder="Questão 35" autocomplete="off"/></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="gabarito36" placeholder="Questão 36" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito37" placeholder="Questão 37" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito38" placeholder="Questão 38" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito39" placeholder="Questão 39" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito40" placeholder="Questão 40" autocomplete="off"/></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="gabarito41" placeholder="Questão 41" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito42" placeholder="Questão 42" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito43" placeholder="Questão 43" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito44" placeholder="Questão 44" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito45" placeholder="Questão 45" autocomplete="off"/></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="gabarito46" placeholder="Questão 46" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito47" placeholder="Questão 47" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito48" placeholder="Questão 48" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito49" placeholder="Questão 49" autocomplete="off"/></td>
+                            <td><input type="text" name="gabarito50" placeholder="Questão 50" autocomplete="off"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="form-section">
+                <br>
+                <h3>Insira os valores das suas respostas:</h3>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" name="resposta1" placeholder="Questão 1" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta2" placeholder="Questão 2" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta3" placeholder="Questão 3" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta4" placeholder="Questão 4" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta5" placeholder="Questão 5" autocomplete="off"/></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="resposta6" placeholder="Questão 6" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta7" placeholder="Questão 7" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta8" placeholder="Questão 8" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta9" placeholder="Questão 9" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta10" placeholder="Questão 10" autocomplete="off"/></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="resposta11" placeholder="Questão 11" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta12" placeholder="Questão 12" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta13" placeholder="Questão 13" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta14" placeholder="Questão 14" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta15" placeholder="Questão 15" autocomplete="off"/></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="resposta16" placeholder="Questão 16" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta17" placeholder="Questão 17" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta18" placeholder="Questão 18" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta19" placeholder="Questão 19" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta20" placeholder="Questão 20" autocomplete="off"/></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="resposta21" placeholder="Questão 21" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta22" placeholder="Questão 22" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta23" placeholder="Questão 23" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta24" placeholder="Questão 24" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta25" placeholder="Questão 25" autocomplete="off"/></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="resposta26" placeholder="Questão 26" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta27" placeholder="Questão 27" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta28" placeholder="Questão 28" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta29" placeholder="Questão 29" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta30" placeholder="Questão 30" autocomplete="off"/></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="resposta31" placeholder="Questão 31" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta32" placeholder="Questão 32" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta33" placeholder="Questão 33" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta34" placeholder="Questão 34" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta35" placeholder="Questão 35" autocomplete="off"/></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="resposta36" placeholder="Questão 36" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta37" placeholder="Questão 37" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta38" placeholder="Questão 38" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta39" placeholder="Questão 39" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta40" placeholder="Questão 40" autocomplete="off"/></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="resposta41" placeholder="Questão 41" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta42" placeholder="Questão 42" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta43" placeholder="Questão 43" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta44" placeholder="Questão 44" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta45" placeholder="Questão 45" autocomplete="off"/></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="resposta46" placeholder="Questão 46" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta47" placeholder="Questão 46" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta48" placeholder="Questão 47" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta49" placeholder="Questão 49" autocomplete="off"/></td>
+                            <td><input type="text" name="resposta50" placeholder="Questão 50" autocomplete="off"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="button-container">
+                <input type="submit" value="CALCULAR"/>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
